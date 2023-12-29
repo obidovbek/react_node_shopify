@@ -1,0 +1,5 @@
+{
+    "watch": ["src"],
+    "ext": "js",
+    "exec": "eslint src --fix && node ./src/main.js"
+}
