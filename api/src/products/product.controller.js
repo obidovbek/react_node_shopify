@@ -11,7 +11,7 @@ export class ProductController {
   constructor() {
     this.productService = ProductService.getInstance();
     this.router = Router();
-    this.router.get('/update', this.getProducts.bind(this));
+    this.router.get('/', this.getProducts.bind(this));
   }
   /**
    *
@@ -20,6 +20,10 @@ export class ProductController {
    */
   async getProducts(req, res) {
     try {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', '*');
+      res.header('Access-Control-Allow-Headers', '*');
+      res.header('Access-Control-Allow-Credentials', true);
       const products = await this.productService.getProducts(req.params);
       res.status(200).json({products});
     } catch (e) {
