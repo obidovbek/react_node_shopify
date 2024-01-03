@@ -1,5 +1,5 @@
 import {ConfigService} from './config.js';
-
+import fetch from 'node-fetch';
 /**
  * Shopify Сервисе
  */
